@@ -32,24 +32,25 @@ class Carros extends CI_Controller {
         
 
 	}
-	public function montadoras($param){
+	public function montadoras($tipo_veiculo){
 		
         $this->load->model('TB_FabricanteVeiculo','fabricante');
 
 		header('Content-Type: application/x-json; charset=utf-8');
 
-		echo json_encode($this->fabricante->lista($param));
+		echo json_encode($this->fabricante->lista($tipo_veiculo));
 
 	}
-	public function modelos($param){
+	public function modelos($tipo_veiculo, $id_fabricante){
 		
         $this->load->model('TB_ModeloVeiculo','modelo');
 
 		header('Content-Type: application/x-json; charset=utf-8');
 
-		echo json_encode($this->modelo->lista($param));
+		echo json_encode($this->modelo->lista($tipo_veiculo, $id_fabricante));
 
 	}
+	/*
 	public function anofabricacao($param){
 		
         $this->load->model('TB_AnoFabricacaoVeiculo','anoFab');
@@ -77,6 +78,7 @@ class Carros extends CI_Controller {
 		echo json_encode($this->versao->lista($param));
 
 	}
+	*/
 
 	
 	

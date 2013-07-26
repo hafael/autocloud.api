@@ -7,7 +7,8 @@
 		/* Campos */
 		var $id;
 		var $TipoVeiculo;
-		var $nome;
+		var $Chave;
+		var $Nome;
 
 		var $nome_tabela;
 		var $data_base_object;
@@ -31,7 +32,8 @@
 				
 				$this->id = $id['id'];
 				$this->TipoVeiculo = $id['TipoVeiculo'];
-				$this->nome = $id['Nome'];
+				$this->Chave = $id['Chave'];
+				$this->Nome = $id['Nome'];
 								
 				return true;
 				
@@ -61,7 +63,8 @@
 					
 						$this->id = $row->id;
 						$this->TipoVeiculo = $row->TipoVeiculo;
-					    $this->nome = $row->Nome;
+					    $this->Chave = $row->Chave;
+					    $this->Nome = $row->Nome;
 				    
 					}
 				}

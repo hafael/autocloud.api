@@ -6,7 +6,11 @@
 
 		/* Campos */
 		var $id;
-		var $nome;
+		var $TipoVeiculo;
+		var $TB_FabricanteVeiculo_Chave;
+		var $Chave;
+		var $TB_FabricanteVeiculo_Nome;
+		var $Nome;
 
 		var $nome_tabela;
 		var $data_base_object;
@@ -30,6 +34,10 @@
 	    	if(is_array($id)){
 				
 				$this->id = $id['id'];
+				$this->TipoVeiculo = $id['TipoVeiculo'];
+				$this->TB_FabricanteVeiculo_Chave = $id['TB_FabricanteVeiculo_Chave'];
+				$this->Chave = $id['Chave'];
+				$this->TB_FabricanteVeiculo_Nome = $id['TB_FabricanteVeiculo_Nome'];
 				$this->nome = $id['Nome'];
 								
 				return true;
@@ -37,6 +45,10 @@
 			}else if(is_object($id)){
 				
 				$this->id = $id->id;
+				$this->TipoVeiculo = $id->TipoVeiculo;
+				$this->TB_FabricanteVeiculo_Chave = $id->TB_FabricanteVeiculo_Chave;
+				$this->Chave = $id->Chave;
+				$this->TB_FabricanteVeiculo_Nome = $id->TB_FabricanteVeiculo_Nome;
 				$this->nome = $id->Nome;
 							
 				return true;
@@ -72,12 +84,13 @@
 
 
 	    # VERIFICA SE O USUÁRIO ESTÁ LOGADO
-	    function lista($id_fabricante) {
+	    function lista($tipo_veiculo, $id_fabricante) {
 	        //load database
 			$this->data_base_object = $this->load->database($this->config_database,true);
 
 			//cria consulta
-			$this->data_base_object->where('TB_FabricanteVeiculo_id = ', $id_fabricante);
+			$this->data_base_object->where('TipoVeiculo = ', $tipo_veiculo);
+			$this->data_base_object->where('TB_FabricanteVeiculo_Chave = ', $id_fabricante);
 
 			//executa query
 			$query = $this->data_base_object->get_where($this->nome_tabela);
