@@ -32,9 +32,21 @@ class Usuario extends CI_Controller {
 	}
 	public function email(){
 		
-        header('Content-Type: application/x-json; charset=utf-8');
+		
 
-		echo json_encode($this->anunciante->verificaEmail($this->input->get('email')));
+		if($this->input->get('email')!=''){
+
+			$data = $this->anunciante->verificaEmail($this->input->get('email'));
+
+		}else{
+
+			$data = false;
+
+		}
+
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($data));
 
 	}
 

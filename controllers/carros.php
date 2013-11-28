@@ -36,18 +36,22 @@ class Carros extends CI_Controller {
 		
         $this->load->model('TB_FabricanteVeiculo','fabricante');
 
-		header('Content-Type: application/x-json; charset=utf-8');
+		$data = $this->fabricante->lista($tipo_veiculo);
 
-		echo json_encode($this->fabricante->lista($tipo_veiculo));
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($data));
 
 	}
 	public function modelos($tipo_veiculo, $id_fabricante){
 		
         $this->load->model('TB_ModeloVeiculo','modelo');
 
-		header('Content-Type: application/x-json; charset=utf-8');
+		$data = $this->modelo->lista($tipo_veiculo, $id_fabricante);
 
-		echo json_encode($this->modelo->lista($tipo_veiculo, $id_fabricante));
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($data));
 
 	}
 	/*

@@ -36,18 +36,22 @@ class EstadoCidade extends CI_Controller {
 		
         $this->load->model('TB_Estados','estados');
 
-		header('Content-Type: application/x-json; charset=utf-8');
+		$data = $this->estados->lista();
 
-		echo json_encode($this->estados->lista());
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($data));
 
 	}
 	public function cidades($param){
 		
         $this->load->model('TB_Cidades','cidades');
 
-		header('Content-Type: application/x-json; charset=utf-8');
+		$data = $this->cidades->lista($param);
 
-		echo json_encode($this->cidades->lista($param));
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($data));
 
 	}
 
