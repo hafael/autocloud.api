@@ -38,16 +38,7 @@
 |
 */
 
-$route['default_controller'] = "home";
-
-/* Admin Routes*/
-$route['meus-anuncios'] = "meusanuncios";
-$route['novo-anuncio'] = "novoanuncio";
-$route['novo-anuncio-carro'] = "novoanuncio/carro";
-$route['meus-dados'] = "meusdados";
-$route['alterar-senha'] = "alterarsenha";
-
-/* Generic Routes*/
+$route['default_controller'] = "welcome";
 $route['404_override'] = '';
 
 

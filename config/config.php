@@ -14,10 +14,7 @@
 | path to your installation.
 |
 */
-
-$config['base_url'] = ($_SERVER['HTTP_HOST']=='localhost') ? 
-  'http://localhost/autocloud/webservice/' : // local base url
-  'http://api.autocloud.com.br/'; // live base url 
+$config['base_url']	= 'http://localhost/ci-rest-server/v1/';
 
 /*
 |--------------------------------------------------------------------------
@@ -227,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'ccd8d704c56c7d2a0f5370d98bd21d02';
+$config['encryption_key'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -265,13 +262,11 @@ $config['sess_time_to_update']	= 300;
 | 'cookie_prefix' = Set a prefix if you need to avoid collisions
 | 'cookie_domain' = Set to .your-domain.com for site-wide cookies
 | 'cookie_path'   =  Typically will be a forward slash
-| 'cookie_secure' =  Cookies will only be set if a secure HTTPS connection exists.
 |
 */
-$config['cookie_prefix']	= "";
-$config['cookie_domain']	= "";
-$config['cookie_path']		= "/";
-$config['cookie_secure']	= FALSE;
+$config['cookie_prefix']	= '';
+$config['cookie_domain']	= '';
+$config['cookie_path']		= '/';
 
 /*
 |--------------------------------------------------------------------------
