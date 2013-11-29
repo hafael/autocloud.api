@@ -14,7 +14,10 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/ci-rest-server/v1/';
+$config['base_url'] = ($_SERVER['HTTP_HOST']=='localhost') ? 
+  'http://localhost/autocloud/api/' : // local base url
+  'http://api.autocloud.com.br/'; // live base url 
+
 
 /*
 |--------------------------------------------------------------------------
